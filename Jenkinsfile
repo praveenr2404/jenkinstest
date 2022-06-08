@@ -20,5 +20,13 @@ pipeline {
                 bat 'mvn install exec:java'
             }
         }
+        stage('Post build commit'){
+            steps{
+                bat '''
+                    git commit -am "Add text"
+                    git push
+                '''
+            }
+        }
     }
 }
