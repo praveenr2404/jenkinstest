@@ -23,8 +23,8 @@ pipeline {
 
         stage ('Build') {
             steps {
-                bat 'mvn install"'
-                '"exec:java'
+                bat 'mvn install'''
+                '''exec:java'
             }
         }
         stage('Post build commit'){
