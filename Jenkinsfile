@@ -9,7 +9,7 @@ pipeline {
             steps {
                 withCredentials([usernamePassword(credentialsId: 'testId', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
                     bat '''
-                        echo uname=$USERNAME pwd=$PASSWORD
+                        echo uname=%USERNAME% pwd=%PASSWORD%
                     '''
                 }
                 bat '''
