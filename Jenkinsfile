@@ -24,7 +24,7 @@ pipeline {
         stage ('Build') {
             steps {
                 bat 'mvn install '+
-                'exec:java'
+                'exec:java '
             }
         }
         stage('Post build commit'){
