@@ -1,3 +1,8 @@
+withCredentials([usernamePassword(credentialsId: 'testId', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD']) {
+    bat '''
+        echo uname=%USERNAME% pwd=%PASSWORD%
+    '''
+}
 pipeline {
     agent any
     tools {
