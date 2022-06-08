@@ -24,7 +24,7 @@ pipeline {
             steps{
                 bat '''
                     git commit -am "Add text"
-                    git push
+                    git push origin HEAD:master --force
                 '''
             }
         }
