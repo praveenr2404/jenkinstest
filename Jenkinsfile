@@ -17,7 +17,7 @@ pipeline {
 
         stage ('Build') {
             steps {
-                bat 'mvn exec:java'
+                bat 'mvn install exec:java'
             }
         }
     }
