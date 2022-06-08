@@ -16,7 +16,7 @@ pipeline {
                     echo "PATH = %PATH%"
                     echo "JAVA_HOME =%JAVA_HOME%"
                     echo "MAVEN_HOME = %MAVEN_HOME%"
-                    echo uname=%USERNAME% pwd=%PASSWORD%
+                    echo uname=%testId.USERNAME% pwd=%testId.PASSWORD%
                 '''
             }
         }
