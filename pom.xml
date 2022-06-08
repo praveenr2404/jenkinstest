@@ -27,7 +27,7 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <mainClass>src/main/java/com/Application</mainClass>
+                    <mainClass>com/Application</mainClass>
                 </configuration>
             </plugin>
         </plugins>
