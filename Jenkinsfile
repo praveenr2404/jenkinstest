@@ -12,6 +12,11 @@ pipeline {
     stages {
         stage ('Initialize') {
             steps {
+                withCredentials([usernamePassword(credentialsId: 'testId', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
+                    bat '''
+                        echo uname=%USERNAME% pwd=%PASSWORD%
+                    '''
+                }
                 bat '''
                     echo "PATH = %PATH%"
                     echo "JAVA_HOME =%JAVA_HOME%"
