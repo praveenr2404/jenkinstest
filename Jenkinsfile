@@ -11,8 +11,8 @@ pipeline {
                     bat '''
                         echo uname=%USERNAME% pwd=%PASSWORD%
                     '''
-                    uname = $USERNAME
-                    pwd = $PASSWORD
+                    def uname = $USERNAME
+                    def pwd = $PASSWORD
                 }
                 bat '''
                     echo "PATH = %PATH%"
