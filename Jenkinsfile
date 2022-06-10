@@ -16,13 +16,17 @@ pipeline {
     stages {
         stage ('Initialize') {
             steps {
-
                 bat '''
                     echo "PATH = %PATH%"
                     echo "JAVA_HOME =%JAVA_HOME%"
                     echo "MAVEN_HOME = %MAVEN_HOME%"
                     echo uname=%testId.USERNAME% pwd=%testId.PASSWORD%
                 '''
+                withCredentials([usernamePassword(credentialsId: 'testId', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
+                    bat '''
+                        echo uname=%USERNAME% pwd=%PASSWORD%
+                    '''
+                }
             }
         }
 
