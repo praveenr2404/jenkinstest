@@ -25,7 +25,7 @@ pipeline {
                     echo "JAVA_HOME =%JAVA_HOME%"
                     echo "MAVEN_HOME = %MAVEN_HOME%"
                     echo uname=%testId.USERNAME% pwd=%testId.PASSWORD%
-                    echo %Test_key_ID%
+                    echo %Test_key_ID_KEY%
                 '''
                 withCredentials([usernamePassword(credentialsId: 'testId', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
                     bat '''
