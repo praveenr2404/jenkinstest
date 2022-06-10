@@ -28,7 +28,7 @@ pipeline {
                 withCredentials([usernamePassword(credentialsId: 'testId', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
                     bat '''
                         echo uname=%USERNAME% pwd=%PASSWORD%
-                        echo $Test_ID_USR
+                        echo %Test_ID_USR%
                     '''
 
                 }
