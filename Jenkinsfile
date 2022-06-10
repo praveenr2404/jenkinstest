@@ -5,7 +5,7 @@ withCredentials([usernamePassword(credentialsId: 'testId', usernameVariable: 'US
     '''
     batch.uname = "%USERNAME%"
     batch.pwd = "%PASSWORD%"
-}/*
+}*/
 
 pipeline {
     agent any
