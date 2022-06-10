@@ -1,11 +1,11 @@
-def batch =[:]
+/*def batch =[:]
 withCredentials([usernamePassword(credentialsId: 'testId', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
     bat '''
         echo uname=%USERNAME% pwd=%PASSWORD%
     '''
     batch.uname = "%USERNAME%"
     batch.pwd = "%PASSWORD%"
-}
+}/*
 
 pipeline {
     agent any
