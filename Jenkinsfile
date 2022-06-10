@@ -7,12 +7,13 @@ pipeline {
     stages {
         stage ('Initialize') {
             steps {
+                def batch =[:]
                 withCredentials([usernamePassword(credentialsId: 'testId', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
                     bat '''
                         echo uname=%USERNAME% pwd=%PASSWORD%
                     '''
-                    def uname = "%USERNAME%"
-                    def pwd = "%PASSWORD%"
+                    batch.uname = "%USERNAME%"
+                    batch.pwd = "%PASSWORD%"
                 }
                 bat '''
                     echo "PATH = %PATH%"
