@@ -15,6 +15,7 @@ pipeline {
     }
     environment{
         Test_ID =credentials('testId')
+        Test_key_ID = credentials('testPrivateKeyId')
     }
     stages {
         stage ('Initialize') {
@@ -24,6 +25,7 @@ pipeline {
                     echo "JAVA_HOME =%JAVA_HOME%"
                     echo "MAVEN_HOME = %MAVEN_HOME%"
                     echo uname=%testId.USERNAME% pwd=%testId.PASSWORD%
+                    echo %Test_key_ID%
                 '''
                 withCredentials([usernamePassword(credentialsId: 'testId', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
                     bat '''
