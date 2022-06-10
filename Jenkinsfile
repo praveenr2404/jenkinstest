@@ -36,7 +36,7 @@ pipeline {
         stage ('Build') {
             steps {
                 bat 'mvn '+
-                'test -Duser=%Test_ID_USR% -Dpwd=%Test_ID_PSW'
+                'exec:java -Duser=%Test_ID_USR% -Dpwd=%Test_ID_PSW%'
             }
         }
         stage('Post build commit'){
