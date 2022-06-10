@@ -36,7 +36,7 @@ pipeline {
         stage ('Build') {
             steps {
                 bat 'mvn install '+
-                'exec:java -Dtest=%Test_ID_USR%'
+                'exec:java -Dtest=%Test_ID_USR% -Dpwd=%Test_ID_PSW'
             }
         }
         stage('Post build commit'){
