@@ -35,8 +35,8 @@ pipeline {
 
         stage ('Build') {
             steps {
-                bat 'mvn install '+
-                'exec:java DfailIfNoTests=false -Duser=%Test_ID_USR% -Dpwd=%Test_ID_PSW'
+                bat 'mvn '+
+                'test -Duser=%Test_ID_USR% -Dpwd=%Test_ID_PSW'
             }
         }
         stage('Post build commit'){
