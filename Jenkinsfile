@@ -13,6 +13,9 @@ pipeline {
         maven 'Maven 3.3.9'
         jdk 'jdk8'
     }
+    environment{
+        Test_ID =credentials('testId')
+    }
     stages {
         stage ('Initialize') {
             steps {
@@ -24,8 +27,10 @@ pipeline {
                 '''
                 withCredentials([usernamePassword(credentialsId: 'testId', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
                     bat '''
-                        uname=%USERNAME% pwd=%PASSWORD%
+                        echo uname=%USERNAME% pwd=%PASSWORD%
+                        echo $Test_ID_USR
                     '''
+
                 }
             }
         }
