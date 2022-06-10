@@ -15,7 +15,7 @@ pipeline {
     }
     environment{
         Test_ID =credentials('testId')
-        Test_key_ID = credentials('testPrivateKeyId')
+        //Test_key_ID = credentials('testPrivateKeyId')
     }
     stages {
         stage ('Initialize') {
