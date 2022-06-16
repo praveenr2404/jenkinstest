@@ -37,8 +37,10 @@ pipeline {
 
         stage ('Build') {
             steps {
-                bat 'mvn '+
-                'exec:java -Duser=%Test_ID_USR% -Dpwd="%Test_ID_PSW%"'
+                dir("jenkins-sub-test"){
+                    bat 'mvn '+
+                    'exec:java -Duser=%Test_ID_USR% -Dpwd="%Test_ID_PSW%"'
+                }
             }
         }
         stage('Post build commit'){
