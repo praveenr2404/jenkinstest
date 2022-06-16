@@ -39,7 +39,7 @@ pipeline {
             steps {
                 dir("jenkins-sub-test"){
                     bat 'mvn '+
-                    'exec:java -Duser=%Test_ID_USR% -Dpwd="%Test_ID_PSW%"'
+                    'exec:java -DmainClass="com.Application"'
                 }
             }
         }
