@@ -39,7 +39,7 @@ pipeline {
             steps {
                 dir("jenkins-sub-test"){
                     bat 'mvn '+
-                    'exec:java -DmainClass="com.Application"'
+                    'exec:java -Dexec.mainClass="com.Application"'
                 }
             }
         }
